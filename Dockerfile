@@ -2,12 +2,21 @@ FROM ubuntu:bionic
 
 MAINTAINER Murray Whyte <mw231@st-andrews.ac.uk>
 
+ENV LIBSEMIGROUPS_VERSION 1.0.9
+
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV LIBSEMIGROUPS_VERSION latest
-
 RUN apt-get update -qq \
-  && apt-get install -y git curl automake autoconf libtool build-essential m4 sudo 
+  && apt-get install -y \
+  automake \
+  autoconf \
+  build-essential \
+  curl \
+  git \
+  libtool \
+  m4 \
+  pkg-config \
+  sudo 
 
 RUN adduser --quiet --shell /bin/bash --gecos "libsemigroups user,101,," --disabled-password libsemigroups \
     && adduser libsemigroups sudo \
@@ -16,18 +25,15 @@ RUN adduser --quiet --shell /bin/bash --gecos "libsemigroups user,101,," --disab
     && cd /home/libsemigroups \
     && touch .sudo_as_admin_successful
 
-RUN git clone https://github.com/libsemigroups/libsemigroups \
-    && cd libsemigroups/extern \
-    && curl -L -O https://github.com/fmtlib/fmt/archive/5.3.0.tar.gz \
-    && tar -xzf 5.3.0.tar.gz \
-    && rm -f 5.3.0.tar.gz \
-    && cd .. \
-    && ./autogen.sh \
-    && ./configure \
+RUN curl -L -O https://github.com/libsemigroups/libsemigroups/releases/download/v${LIBSEMIGROUPS_VERSION}/libsemigroups-${LIBSEMIGROUPS_VERSION}.tar.gz \
+    && tar -xf libsemigroups-${LIBSEMIGROUPS_VERSION}.tar.gz \
+    && rm libsemigroups-${LIBSEMIGROUPS_VERSION}.tar.gz \
+    && cd libsemigroups-${LIBSEMIGROUPS_VERSION} \
+    && ./configure --disable-hpcombi \
     && make -j4 \
     && sudo make install \
     && cd / \
-    && rm -rf libsemigroups
+    && rm -rf libsemigroups-${LIBSEMIGROUPS_VERSION}
 
 USER libsemigroups
 

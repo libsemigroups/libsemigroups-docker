@@ -1,0 +1,4 @@
+This repo has only one branch, every time there is a new release of
+libsemigroups, the version number should be updated in Dockerfile, this shuld
+be (git) committed, then that commit tagged with the latest release number in
+the form `v1.0.9` or analogous.
