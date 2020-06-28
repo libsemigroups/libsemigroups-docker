@@ -11,8 +11,8 @@ docker run --rm -it libsemigroups/libsemigroups-docker
 
 If you want to use a specific version of `libsemigroups`, then use:
 ~~~
-docker pull libsemigroups/libsemigroups-docker:version-1.0.9
-docker run --rm -it libsemigroups/libsemigroups-docker:version-1.0.9
+docker pull libsemigroups/libsemigroups-docker:version-1.2.0
+docker run --rm -it libsemigroups/libsemigroups-docker:version-1.2.0
 ~~~
 or, for the latest version, use:
 ~~~
