@@ -29,7 +29,7 @@ RUN curl -L -O https://github.com/libsemigroups/libsemigroups/releases/download/
     && tar -xf libsemigroups-${LIBSEMIGROUPS_VERSION}.tar.gz \
     && rm libsemigroups-${LIBSEMIGROUPS_VERSION}.tar.gz \
     && cd libsemigroups-${LIBSEMIGROUPS_VERSION} \
-    && ./configure --disable-hpcombi \
+    && ./configure --disable-hpcombi --disable-eigen\
     && make -j4 \
     && sudo make install \
     && cd / \
