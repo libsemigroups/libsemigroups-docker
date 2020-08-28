@@ -1,8 +1,8 @@
 FROM ubuntu:bionic
 
-MAINTAINER Murray Whyte <mw231@st-andrews.ac.uk>
+MAINTAINER James D. Mitchell <jdm3@st-andrews.ac.uk>
 
-ENV LIBSEMIGROUPS_VERSION 1.3.0
+ENV LIBSEMIGROUPS_VERSION 1.3.1
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -29,7 +29,7 @@ RUN curl -L -O https://github.com/libsemigroups/libsemigroups/releases/download/
     && tar -xf libsemigroups-${LIBSEMIGROUPS_VERSION}.tar.gz \
     && rm libsemigroups-${LIBSEMIGROUPS_VERSION}.tar.gz \
     && cd libsemigroups-${LIBSEMIGROUPS_VERSION} \
-    && ./configure --disable-hpcombi --disable-eigen\
+    && ./configure --disable-hpcombi --disable-eigen \
     && make -j4 \
     && sudo make install \
     && cd / \
