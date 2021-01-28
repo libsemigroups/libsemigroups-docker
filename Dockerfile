@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 
 MAINTAINER James D. Mitchell <jdm3@st-andrews.ac.uk>
 
-ENV LIBSEMIGROUPS_VERSION 1.3.4
+ENV LIBSEMIGROUPS_VERSION 1.3.5
 
 ENV DEBIAN_FRONTEND noninteractive
 
