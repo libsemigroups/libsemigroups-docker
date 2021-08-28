@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
 MAINTAINER James D. Mitchell <jdm3@st-andrews.ac.uk>
 
