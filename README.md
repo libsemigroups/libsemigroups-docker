@@ -19,6 +19,3 @@ or, for the latest version, use:
 docker pull libsemigroups/libsemigroups-docker:latest
 docker run --rm -it libsemigroups/libsemigroups-docker:latest
 ~~~
-
-This container is used by the [libsemigroups-cppyy](https://hub.docker.com/repository/docker/libsemigroups/libsemigroups-cppyy) Docker container.
-
