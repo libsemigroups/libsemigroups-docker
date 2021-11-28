@@ -2,7 +2,7 @@ FROM ubuntu:focal
 
 MAINTAINER James D. Mitchell <jdm3@st-andrews.ac.uk>
 
-ENV LIBSEMIGROUPS_VERSION 2.0.3
+ENV LIBSEMIGROUPS_VERSION 2.1.0
 
 ENV DEBIAN_FRONTEND noninteractive
 
