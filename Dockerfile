@@ -2,7 +2,7 @@ FROM ubuntu:focal
 
 MAINTAINER James D. Mitchell <jdm3@st-andrews.ac.uk>
 
-ENV LIBSEMIGROUPS_VERSION 2.1.4
+ENV LIBSEMIGROUPS_VERSION 2.1.5
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -16,7 +16,7 @@ RUN apt-get update -qq \
   libtool \
   m4 \
   pkg-config \
-  sudo 
+  sudo
 
 RUN adduser --quiet --shell /bin/bash --gecos "libsemigroups user,101,," --disabled-password libsemigroups \
     && adduser libsemigroups sudo \
